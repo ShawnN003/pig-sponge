@@ -1,5 +1,4 @@
 public class Pig {
-
     /*
     * Create a method "pigLatin" that takes a string consisting of one or more 
     * all-lowercase words separated by spaces. It should return a new string 
@@ -25,7 +24,43 @@ public class Pig {
     }
 
     // Implement your solution here!
+    /**
+     * Step 1: Insert each word in an array of strings && Splitting the String by spaces to get each letter 
+     * Step 3: Check the first letter of each word if its a vowel 
+     * (if true- shift it to the end if false- add it to the new String by concatinating)
+     * Step 4: Add that word in a new String by concatinating and add ay at the end of each word
+     * 
+     * @param sentence
+     * @return
+     */
+
+            // if (sentence.charAt(0) == 'a' || sentence.charAt(0) == 'e' ||sentence.charAt(0) == 'i' 
+            //     || sentence.charAt(0) == 'u' || sentence.charAt(0) == 'o')
+            // {
+
+            // }
     public static String pigLatin(String sentence) {
+        String word = " ";
+        char firstLetter = ' ';
+        char lastLetter = ' ';
+
+        String arr [] = sentence.split(" ");
+
+        for(int i = 0; i <=arr.length; i++)
+        {
+            if(arr[i].startsWith("a") || arr[i].startsWith("e") || arr[i].startsWith("i") ||
+            arr[i].startsWith("u") || arr[i].startsWith("o"))
+            {
+                word = arr[i];
+                word += "ay";
+            }
+            else {
+                firstLetter = arr[i].charAt(0);
+                lastLetter = arr[i].charAt(arr[i].length());
+                word = arr[i].concat("ay");
+            }
+        }
+        
         return null;
     }
 
