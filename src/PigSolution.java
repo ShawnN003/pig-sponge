@@ -112,7 +112,9 @@
   // If the word starts with a consonant, the first letter is moved to the end followed by "ay"
   private static String pigLatinSingleWord(String word) {
     // Check if the first letter is a vowel
-    if (word.charAt(0) == 'a' || word.charAt(0) == 'e' || word.charAt(0) == 'i' || word.charAt(0) == 'o' || word.charAt(0) == 'u') {
+    if (word.charAt(0) == 'a' || word.charAt(0) == 'e' || word.charAt(0) == 'i' ||
+     word.charAt(0) == 'o' || word.charAt(0) == 'u') 
+     {
       return word; // Return the word unchanged if it starts with a vowel
     }
     

@@ -30,6 +30,13 @@ public class Pig {
      * (if true- shift it to the end if false- add it to the new String by concatinating)
      * Step 4: Add that word in a new String by concatinating and add ay at the end of each word
      * 
+     * 
+     * Crucial Steps I missed:
+     * -Inserting each word into an array 
+     * -Adding all words in one consecutive string at the end 
+     * Deleting the first word using the substring method: word = arr[i].substring(1); 
+     * 
+     * 
      * @param sentence
      * @return
      */
@@ -41,27 +48,30 @@ public class Pig {
             // }
     public static String pigLatin(String sentence) {
         String word = " ";
+        String result = " ";
         char firstLetter = ' ';
         char lastLetter = ' ';
 
         String arr [] = sentence.split(" ");
 
-        for(int i = 0; i <=arr.length; i++)
+        for(int i = 0; i <=arr.length-1; i++)
         {
             if(arr[i].startsWith("a") || arr[i].startsWith("e") || arr[i].startsWith("i") ||
             arr[i].startsWith("u") || arr[i].startsWith("o"))
             {
                 word = arr[i];
-                word += "ay";
             }
             else {
                 firstLetter = arr[i].charAt(0);
-                lastLetter = arr[i].charAt(arr[i].length());
-                word = arr[i].concat("ay");
+                word = arr[i].substring(1);
+                word+= firstLetter;
+                word+= "ay";
             }
+            result+= word;
+            result+= " ";
         }
         
-        return null;
+        return result.trim();
     }
 
     // Method to help with testing, you do not need to read this.
