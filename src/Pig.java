@@ -64,14 +64,6 @@ public class Pig {
         return null;
     }
 
-
-
-
-
-
-
-
-
     // Method to help with testing, you do not need to read this.
     public static void assertEqual(int testNumber, String actual, String expected) {
         if (!expected.equals(actual)) {
