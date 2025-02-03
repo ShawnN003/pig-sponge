@@ -50,28 +50,28 @@ public class Pig {
         String word = " ";
         String result = " ";
         char firstLetter = ' ';
-        char lastLetter = ' ';
 
-        String arr [] = sentence.split(" ");
+        String arr [] = sentence.split(" ");    //inserting each word seperated by a space in a string array
 
-        for(int i = 0; i <=arr.length-1; i++)
+        for(int i = 0; i <=arr.length-1; i++)    //Looping through the array of words from the sentence
         {
             if(arr[i].startsWith("a") || arr[i].startsWith("e") || arr[i].startsWith("i") ||
             arr[i].startsWith("u") || arr[i].startsWith("o"))
             {
-                word = arr[i];
+                word = arr[i];    //when the word starts with a vowel, insert it in a string 
             }
-            else {
-                firstLetter = arr[i].charAt(0);
-                word = arr[i].substring(1);
-                word+= firstLetter;
+            else     
+            {
+                firstLetter = arr[i].charAt(0);    //insert the first letter in a variable
+                word = arr[i].substring(1);    //taking out the first letter from the word 
+                word+= firstLetter;    //adding the first letter at the end of the string 
                 word+= "ay";
             }
-            result+= word;
+            result+= word;    //adding each needed word into a string sentence
             result+= " ";
         }
         
-        return result.trim();
+        return result.trim();    //cutting out any extra spaces
     }
 
     // Method to help with testing, you do not need to read this.
