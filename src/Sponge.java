@@ -52,29 +52,27 @@ public class Sponge {
 
     for(String word : arr)
     {
-      spongeBob.add(word);
+      trueSponge += spongeSingleWord(word);
     }
 
-    for(int i = 0; i <= spongeBob.size()-1; i++)
-    {
-      char []spongeArray = spongeBob.get(i).toCharArray();    //Converting this into a character array 
-      for(int j = 0; j < spongeArray.length-1; j++)    //iterating through each letter in the string 
-      {
-        if(j % 2 == 0)
-        {
-          Character.toUpperCase(spongeArray[i]);    //changing each even character to an uppercase
-          trueSponge += spongeArray[i];
+    return trueSponge.trim();
+  }
+  private static String spongeSingleWord(String word) {
+    String newWord = " ";
+    char[] letters = word.toCharArray();
 
-        }
-        else if(j % 2 != 0)
-        {
-          Character.toLowerCase(spongeArray[i]);
-          trueSponge += spongeArray[i];
-        }         
+    for (int i = 0; i <= letters.length-1; i++) {
+      if (i % 2 == 0) {
+
+        newWord += Character.toLowerCase(letters[i]);
+      } else {
+
+        newWord += Character.toUpperCase(letters[i]);
       }
+
     }
 
-    return trueSponge;
+    return newWord;
   }
 
 
