@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Sponge {
 
   /*
@@ -21,6 +23,14 @@ public class Sponge {
    * Character.toLowerCase() (e.g. Character.toLowerCase('Q'))
    * .toCharArray() String method (e.g. myString.toCharArray())
    */
+
+   /**
+    * Step 0: Split the string and insert into an array.
+
+    * Step 1: Loop through string 
+
+    * Step 2: If the string is even (change to upper case) 
+    */
   public static void main(String[] args) {
     // Test cases
     assertEqual(1, spongeCase("spongebob"), "sPoNgEbOb");
@@ -33,7 +43,38 @@ public class Sponge {
 
   // Implement your solution here!
   public static String spongeCase(String sentence) {
-    return null;
+    ArrayList<String> spongeBob = new ArrayList<String>();    //hold each individual word 
+
+    String regex = " ";
+    String[] arr = sentence.split(regex);
+
+    String trueSponge = "";
+
+    for(String word : arr)
+    {
+      spongeBob.add(word);
+    }
+
+    for(int i = 0; i <= spongeBob.size()-1; i++)
+    {
+      char []spongeArray = spongeBob.get(i).toCharArray();    //Converting this into a character array 
+      for(int j = 0; j < spongeArray.length-1; j++)    //iterating through each letter in the string 
+      {
+        if(j % 2 == 0)
+        {
+          Character.toUpperCase(spongeArray[i]);    //changing each even character to an uppercase
+          trueSponge += spongeArray[i];
+
+        }
+        else if(j % 2 != 0)
+        {
+          Character.toLowerCase(spongeArray[i]);
+          trueSponge += spongeArray[i];
+        }         
+      }
+    }
+
+    return trueSponge;
   }
 
 
